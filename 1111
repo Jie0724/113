@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>1111上課筆記 翻牌遊戲</title>
+    <meta charset="UTf-8">
+    <style>
+        #board {
+            display: grid;
+            grid:repeat(3,100px) / repeat(4,80px);
+        }
+</style>
+<script>
+    function get(id) {
+        return document.getElementById(id);
+    }
+    function getRandNum(min,max) {
+        return Math.floor(math.random()*(max-min+1))
+    }
+    function gameStart() {
+        imgs=Array.from(document.getElementsByTagName("img"));
+        setTimeout(clearInterval,3000,setInterval(function(){
+            ans.sort(function(){ return math.random()-0.5;});
+            for(i=0;i<imgs.length;i++) {
+                imgs[i].src=`pic/${ans{i}}.png`;
+            }
+        },50)); 
+    }
+</script>
+</head>
+<body>
+    <div id="board">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+    </div>
+    <button onclick="gamesystart();">洗牌</button>
+</body>
+</html>
