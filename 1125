@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>1125上課筆記 鍵盤控制</title>
+    <meta charst="UTF-8">
+    <style>
+        #worldmap {
+            background: url("pic/grass.jpg");
+            background-size: 200px 140px;
+            width: 800px;
+            height: 800px;
+        }
+        @keyframes role1walk {
+            0%{background-position-x: 0px;}
+            100%{background-position-x: -144px;}
+        }
+        #role {
+            background-image: url("sprite1.png");
+            width: 48px;
+            height: 72px;
+            animation: role1walk 1s steps(3) infinite;
+        }
+    </style>
+    <script>
+        function get(id) {
+            return document.getElementById(id);
+        }
+        function mykeydown {
+            event.preventDefault();
+            console.log(event.key)
+        }
+    </script>
+    <body>
+        <div id="worldmap" onkeydown="mykeydown();">
+            <div id="worldmap">
+    </body>
+</head>
