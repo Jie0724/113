@@ -21,12 +21,32 @@
         }
     </style>
     <script>
+        var pos={x:0,y:0}
+        var dir={"Arrowup":0,"arrowdown":0,"arrowleft":0,"arrowright":0,};
         function get(id) {
             return document.getElementById(id);
         }
         function mykeydown {
             event.preventDefault();
             console.log(event.key)
+        }
+        function mykeyup() {
+            event.preventDefault();
+            dir[event.key]=0;
+        }
+        function walk() {
+            var dx={"Arrowup":0,"arrowdown":0,"arrowleft":0,"arrowright":0,}
+            var dy={"Arrowup":0,"arrowdown":0,"arrowleft":0,"arrowright":0,}
+            if(dir["Arrowup"]==1) {
+                pos.y--;
+            } else if(dir["arrowdown"==1]) {
+                pos.y++
+            }
+            if(dir["Arrowup"]==1) {
+                pos.y--;
+            } else if(dir["arrowdown"==1]) {
+                pos.y++
+            }
         }
     </script>
     <body>
