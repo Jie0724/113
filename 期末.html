@@ -1,0 +1,83 @@
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字小達人</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background-color: #606060;
+        }
+        .game-container {
+            text-align: center;
+            background-color: #17b7d3;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            padding: 10px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        button {
+            padding: 10px 26px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #606060;
+            color: #ffffff;
+            padding: 10px 0;
+        }
+        </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>猜數字</h1>
+        <h2><strong>這是一個猜數字遊戲, 有1~100的數字, 你能猜到嗎?</strong></h2>
+        <h3>請注意:本遊戲已設定為只能輸入數字喔, 輸入其他非數字的字體是沒有用的喔~</h3>
+        <input type="number" id="guessInput" min="1" max="100" placeholder="數字">
+        <button onclick="checkGuess()">猜
+        </button>
+        <p class="feedback" id="feedback">
+        </p>
+    </div>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        const feedback = document.getElementById('feedback');
+
+        function checkGuess() {
+            const userGuess = Number(document.getElementById('guessInput').value);
+            if (userGuess === randomNumber) {
+                feedback.textContent = '答對了!!';
+                feedback.style.color = 'green';
+            } else if (userGuess < randomNumber) {
+                feedback.textContent = '太低了, 再猜一次';
+                feedback.style.color = 'red';
+            } else {
+                feedback.textContent = '太高囉, 再猜一次';
+                feedback.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
